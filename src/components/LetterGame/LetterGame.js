@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 
 
 const LetterGame = (props) => {
 
-  const { checkAns,} = props
+  const { checkAns, disabled, result, fadeOut} = props
   const { choices, score, ans } = props.gameState
   
 
@@ -14,10 +14,15 @@ const LetterGame = (props) => {
       value={choice.value}
       key={choice.id}
       id={choice.id}
+      disabled={disabled}
     >
       {(choice.value).toUpperCase()}
     </button>
   })
+
+
+    
+ 
 
   return (
     <section className='letter-game'>
@@ -26,7 +31,7 @@ const LetterGame = (props) => {
       <div>
         <img src={ans.image} alt="guess"/>
       </div>
-
+      <div className={`result ${fadeOut}`} style={result.style}>{result.text }</div>
       <div className='choices'>
         {choicesElements}
       </div>
