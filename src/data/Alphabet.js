@@ -24,7 +24,7 @@ export function getWrongAnswers(answer, number = 3) {
       temp = Alphabet[Math.floor(Math.random() * Alphabet.length)]
       //get wrong answers and dont repeat
         if ((answer.value === temp.value) || (ret.filter(element => element.id === temp.id)).length>0 ) {
-            console.log('i--')
+            //console.log('i--')
             i--
         } else {
          ret.push(temp)
